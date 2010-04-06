@@ -1,7 +1,7 @@
 package WebService::KoreanSpeller;
 # ENCODING: utf-8
 # ABSTRACT: Korean spellchecker
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 $VERSION = eval $VERSION;
 
 use Any::Moose;
@@ -61,7 +61,7 @@ WebService::KoreanSpeller - Korean spellchecker
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -72,7 +72,7 @@ version 0.001
     my @results = $checker->spellcheck;   # returns array of hashes
     binmode STDOUT, ':encoding(UTF-8)';
     foreach my $item (@results) {
-        print $item->{position}, "\n";    # index on the original text (starting from 0)
+        print $item->{position}, "\n";    # index in the original text (starting from 0)
         print $item->{incorrect}, " -> "; # incorrect spelling
         print $item->{correct}, "\n";     # correct spelling
         print $item->{comment}, "\n";     # comment about spelling
@@ -95,11 +95,11 @@ version 0.001
 
 =head1 DESCRIPTION
 
-    This module provides a Perl interface to the Web-based korean speller service( 온라인 한국어 맞춤법/문법 검사기 - http://speller.cs.pusan.ac.kr ).
+This module provides a Perl interface to the Web-based korean speller service( 온라인 한국어 맞춤법/문법 검사기 - http://speller.cs.pusan.ac.kr ).
 
 =head1 CAUTION
 
-    I'm afraid we don't have a good open source korean spell checker. but there is a decent proprietary service that runs on the online website( 온라인 한국어 맞춤법/문법 검사기 - http://speller.cs.pusan.ac.kr ). So I made this module with web-scrapping approach, this is easy to mess up if they change layout of the website. Let me know if this does not work. *This module follows the same terms of the original service agreement.*
+I'm afraid we don't have a good open source korean spell checker. but there is a decent proprietary service that runs on the online website( 온라인 한국어 맞춤법/문법 검사기 - http://speller.cs.pusan.ac.kr ). So I made this module with web-scrapping approach, this is easy to mess up if they change layout of the website. Let me know if this does not work. *This module follows the same terms of the original service agreement.*
 
 =head1 METHODS
 

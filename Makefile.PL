@@ -23,7 +23,7 @@ my %WriteMakefileArgs = (
                                            },
                        'ABSTRACT' => 'Korean spellchecker',
                        'EXE_FILES' => [],
-                       'VERSION' => '0.001',
+                       'VERSION' => '0.002',
                        'PREREQ_PM' => {
                                         'namespace::autoclean' => '0',
                                         'LWP::UserAgent' => '0',
