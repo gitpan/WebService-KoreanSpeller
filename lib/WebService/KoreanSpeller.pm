@@ -1,7 +1,7 @@
 package WebService::KoreanSpeller;
 # ENCODING: utf-8
 # ABSTRACT: Korean spellchecker
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 $VERSION = eval $VERSION;
 
 use Any::Moose;
@@ -28,9 +28,10 @@ sub spellcheck {
     die unless $res->is_success;
     my $content = decode('euc-kr', $res->as_string);
 
-    my ($table) = $content =~ m{<table border=1.*?>(.*?)</table>}s;
-    my @rows = $table =~ m{<tr>(.*?)</tr>}sg;
     my @items;
+    my ($table) = $content =~ m{<table border=1.*?>(.*?)</table>}s;
+    return @items unless defined $table; # No error
+    my @rows = $table =~ m{<tr>(.*?)</tr>}sg;
     foreach my $row (@rows) {
         my %item;
         @item{qw/incorrect correct comment/} =
@@ -61,7 +62,7 @@ WebService::KoreanSpeller - Korean spellchecker
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
@@ -109,7 +110,7 @@ Returns an obejct instance of this module. text should be "Unicode string"(a.k.a
 
 =head2 spellcheck
 
-Returns results as array of hases, See SYNOPSIS. you can easily convert AoH to JSON or XML.
+Returns results as array of hases(if there is no error in the text, this method will return empty list), See SYNOPSIS. you can easily convert AoH to JSON or XML.
 
 =head1 AUTHOR
 
