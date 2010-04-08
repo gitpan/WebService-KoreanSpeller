@@ -19,4 +19,4 @@ requires:
   LWP::UserAgent: 0
   namespace::autoclean: 0
   utf8: 0
-version: 0.003
+version: 0.004
