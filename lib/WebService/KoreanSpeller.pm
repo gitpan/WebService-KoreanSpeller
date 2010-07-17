@@ -1,7 +1,7 @@
 package WebService::KoreanSpeller;
 # ENCODING: utf-8
 # ABSTRACT: Korean spellchecker
-our $VERSION = '0.004';
+our $VERSION = '0.005';
 $VERSION = eval $VERSION;
 
 use Any::Moose;
@@ -20,26 +20,25 @@ has 'text' => ( is => 'ro', isa => 'UTF8FlagOnString', required => 1 );
 sub spellcheck {
     my ($self) = @_;
     my $ua = LWP::UserAgent->new;
-    my $req = HTTP::Request->new(POST => 'http://speller.cs.pusan.ac.kr/WebSpell_ISAPI.dll?Check');
+    my $req = HTTP::Request->new(POST => 'http://speller.cs.pusan.ac.kr/PnuSpellerISAPI_201006/lib/PnuSpellerISAPI201006.dll?Check');
     $req->content_type('application/x-www-form-urlencoded');
     my $text = $self->text;
-    $req->content('text1='.encode('euc-kr', $text));
+    $req->content('text1='. encode('utf8',$text));
     my $res = $ua->request($req);
     die unless $res->is_success;
-    my $content = decode('euc-kr', $res->as_string);
+    my $content = decode('utf8', $res->as_string);
+    #print $content; exit;
 
     my @items;
-    my ($table) = $content =~ m{<table border=1.*?>(.*?)</table>}s;
-    return @items unless defined $table; # No error
-    my @rows = $table =~ m{<tr>(.*?)</tr>}sg;
-    foreach my $row (@rows) {
+    my @tables = $content =~ m{<table border='1'.*?>(.*?)</table>}sg;
+    return @items unless @tables; # No error
+    foreach my $table (@tables) {
         my %item;
         @item{qw/incorrect correct comment/} =
-            ( map { $_ =~s/<.*?br>/\n/g;
+            ( map { $_ =~s/<.*?br\/>/\n/g;
                     $_ =~s/^\s+//s;
                     $_ =~s/\s+$//s;
-                    $_ =~s/\s+\[ NARAINFOTECH.*?\]//s;
-                    $_ } $row =~ m{<td.*?>(.*?)</td>}sg )[0..2];
+                    $_ } $table =~ m{<td.*?>(.*?)</td>}sg )[1,3,5];
         $text =~ m/\Q$item{incorrect}\E/g;
         $item{position} = ( pos $text ) - ( length $item{incorrect} );
         push @items, \%item;
@@ -62,7 +61,7 @@ WebService::KoreanSpeller - Korean spellchecker
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -114,7 +113,7 @@ Returns results as array of hashes(if there is no error in the text, this method
 
 =head1 AUTHOR
 
-  C.H. Kang <chahkang@gmail.com>
+C.H. Kang <chahkang@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 

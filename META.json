@@ -1,0 +1,45 @@
+{
+   "abstract" : "Korean spellchecker",
+   "author" : [
+      "C.H. Kang <chahkang@gmail.com>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.101900, CPAN::Meta::Converter version 2.101670",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "WebService-KoreanSpeller",
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.31"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Any::Moose" : 0,
+            "Encode" : 0,
+            "LWP::UserAgent" : 0,
+            "namespace::autoclean" : 0,
+            "utf8" : 0
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test::More" : 0
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "repository" : {
+         "url" : "http://github.com/aero/WebService-KoreanSpeller"
+      }
+   },
+   "version" : "0.005"
+}
+
