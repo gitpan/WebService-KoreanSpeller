@@ -2,7 +2,7 @@ NAME
     WebService::KoreanSpeller - Korean spellchecker
 
 VERSION
-    version 0.005
+    version 0.006
 
 SYNOPSIS
         use WebService::KoreanSpeller;
@@ -45,6 +45,12 @@ CAUTION
     change layout of the website. Let me know if this does not work. *This
     module follows the same terms of the original service agreement.*
 
+NAME
+    WebService::KoreanSpeller - Korean spellchecker
+
+VERSION
+    version 0.005
+
 METHODS
   new( text => 'text for spell check' )
     Returns an obejct instance of this module. text should be "Unicode
@@ -60,6 +66,15 @@ AUTHOR
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2010 by C.H. Kang.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
+AUTHOR
+    C.H. Kang <chahkang@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2011 by C.H. Kang.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

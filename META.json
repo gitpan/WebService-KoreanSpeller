@@ -4,7 +4,7 @@
       "C.H. Kang <chahkang@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.101900, CPAN::Meta::Converter version 2.101670",
+   "generated_by" : "Dist::Zilla version 4.200000, CPAN::Meta::Converter version 2.102400",
    "license" : [
       "perl_5"
    ],
@@ -40,6 +40,6 @@
          "url" : "http://github.com/aero/WebService-KoreanSpeller"
       }
    },
-   "version" : "0.005"
+   "version" : "0.006"
 }
 
