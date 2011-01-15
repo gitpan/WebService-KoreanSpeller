@@ -21,4 +21,4 @@ requires:
   utf8: 0
 resources:
   repository: http://github.com/aero/WebService-KoreanSpeller
-version: 0.007
+version: 0.008
