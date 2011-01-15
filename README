@@ -2,7 +2,7 @@ NAME
     WebService::KoreanSpeller - Korean spellchecker
 
 VERSION
-    version 0.006
+    version 0.007
 
 SYNOPSIS
         use WebService::KoreanSpeller;
@@ -49,7 +49,7 @@ NAME
     WebService::KoreanSpeller - Korean spellchecker
 
 VERSION
-    version 0.005
+    version 0.007
 
 METHODS
   new( text => 'text for spell check' )
