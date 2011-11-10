@@ -2,7 +2,7 @@ NAME
     WebService::KoreanSpeller - Korean spellchecker
 
 VERSION
-    version 0.008
+    version 0.009
 
 SYNOPSIS
         use WebService::KoreanSpeller;
@@ -37,14 +37,6 @@ DESCRIPTION
     This module provides a Perl interface to the Web-based korean speller
     service( 온라인 한국어 맞춤법/문법 검사기 - http://speller.cs.pusan.ac.kr ).
 
-CAUTION
-    I'm afraid we don't have a good open source korean spell checker. but
-    there is a decent proprietary service that runs on the online website(
-    온라인 한국어 맞춤법/문법 검사기 - http://speller.cs.pusan.ac.kr ). So I made this
-    module with web-scrapping approach, this is easy to mess up if they
-    change layout of the website. Let me know if this does not work. *This
-    module follows the same terms of the original service agreement.*
-
 METHODS
   new( text => 'text for spell check' )
     Returns an obejct instance of this module. text should be "Unicode
@@ -54,6 +46,14 @@ METHODS
     Returns results as array of hashes(if there is no error in the text,
     this method will return empty list), See SYNOPSIS. you can easily
     convert AoH to JSON or XML.
+
+CAUTION
+    I'm afraid we don't have a good open source korean spell checker. but
+    there is a decent proprietary service that runs on the online website(
+    온라인 한국어 맞춤법/문법 검사기 - http://speller.cs.pusan.ac.kr ). So I made this
+    module with web-scrapping approach, this is easy to mess up if they
+    change layout of the website. Let me know if this does not work. *This
+    module follows the same terms of the original service agreement.*
 
 AUTHOR
     C.H. Kang <chahkang@gmail.com>

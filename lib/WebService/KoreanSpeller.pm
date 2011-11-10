@@ -1,6 +1,6 @@
 package WebService::KoreanSpeller;
 # ABSTRACT: Korean spellchecker
-our $VERSION = '0.008';
+our $VERSION = '0.009';
 $VERSION = eval $VERSION;
 
 use Any::Moose;
@@ -19,7 +19,7 @@ has 'text' => ( is => 'ro', isa => 'UTF8FlagOnString', required => 1 );
 sub spellcheck {
     my ($self) = @_;
     my $ua = LWP::UserAgent->new;
-    my $req = HTTP::Request->new(POST => 'http://speller.cs.pusan.ac.kr/PnuSpellerISAPI_201009/lib/PnuSpellerISAPI_201009.dll?Check');
+    my $req = HTTP::Request->new(POST => 'http://speller.cs.pusan.ac.kr/PnuSpellerISAPI_201107/lib/PnuSpellerISAPI_201107.dll?Check');
     $req->content_type('application/x-www-form-urlencoded');
     my $text = $self->text;
     $req->content('text1='. encode('utf8', $text));
@@ -57,7 +57,7 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
-=encoding utf-8
+=encoding utf8
 
 =head1 NAME
 
@@ -65,7 +65,7 @@ WebService::KoreanSpeller - Korean spellchecker
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 SYNOPSIS
 
@@ -101,10 +101,6 @@ version 0.008
 
 This module provides a Perl interface to the Web-based korean speller service( 온라인 한국어 맞춤법/문법 검사기 - http://speller.cs.pusan.ac.kr ).
 
-=head1 CAUTION
-
-I'm afraid we don't have a good open source korean spell checker. but there is a decent proprietary service that runs on the online website( 온라인 한국어 맞춤법/문법 검사기 - http://speller.cs.pusan.ac.kr ). So I made this module with web-scrapping approach, this is easy to mess up if they change layout of the website. Let me know if this does not work. *This module follows the same terms of the original service agreement.*
-
 =head1 METHODS
 
 =head2 new( text => 'text for spell check' )
@@ -114,6 +110,10 @@ Returns an obejct instance of this module. text should be "Unicode string"(a.k.a
 =head2 spellcheck
 
 Returns results as array of hashes(if there is no error in the text, this method will return empty list), See SYNOPSIS. you can easily convert AoH to JSON or XML.
+
+=head1 CAUTION
+
+I'm afraid we don't have a good open source korean spell checker. but there is a decent proprietary service that runs on the online website( 온라인 한국어 맞춤법/문법 검사기 - http://speller.cs.pusan.ac.kr ). So I made this module with web-scrapping approach, this is easy to mess up if they change layout of the website. Let me know if this does not work. *This module follows the same terms of the original service agreement.*
 
 =head1 AUTHOR
 

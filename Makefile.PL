@@ -4,33 +4,34 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Korean spellchecker',
-  'AUTHOR' => 'C.H. Kang <chahkang@gmail.com>',
-  'BUILD_REQUIRES' => {
-    'Test::More' => '0'
+  "ABSTRACT" => "Korean spellchecker",
+  "AUTHOR" => "C.H. Kang <chahkang\@gmail.com>",
+  "BUILD_REQUIRES" => {
+    "Test::More" => 0,
+    "strict" => 0
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'WebService-KoreanSpeller',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'WebService::KoreanSpeller',
-  'PREREQ_PM' => {
-    'Any::Moose' => '0',
-    'Encode' => '0',
-    'LWP::UserAgent' => '0',
-    'namespace::autoclean' => '0',
-    'utf8' => '0'
+  "DISTNAME" => "WebService-KoreanSpeller",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "WebService::KoreanSpeller",
+  "PREREQ_PM" => {
+    "Any::Moose" => 0,
+    "Encode" => 0,
+    "LWP::UserAgent" => 0,
+    "namespace::autoclean" => 0,
+    "utf8" => 0
   },
-  'VERSION' => '0.008',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.009",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
