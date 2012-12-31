@@ -2,7 +2,7 @@ NAME
     WebService::KoreanSpeller - Korean spellchecker
 
 VERSION
-    version 0.009
+    version 0.010
 
 SYNOPSIS
         use WebService::KoreanSpeller;
@@ -37,6 +37,12 @@ DESCRIPTION
     This module provides a Perl interface to the Web-based korean speller
     service( 온라인 한국어 맞춤법/문법 검사기 - http://speller.cs.pusan.ac.kr ).
 
+NAME
+    WebService::KoreanSpeller - Korean spellchecker
+
+VERSION
+    version 0.009
+
 METHODS
   new( text => 'text for spell check' )
     Returns an obejct instance of this module. text should be "Unicode
@@ -59,7 +65,16 @@ AUTHOR
     C.H. Kang <chahkang@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2011 by C.H. Kang.
+    This software is copyright (c) 2012 by C.H. Kang.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
+AUTHOR
+    C.H. Kang <chahkang@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2012 by C.H. Kang.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

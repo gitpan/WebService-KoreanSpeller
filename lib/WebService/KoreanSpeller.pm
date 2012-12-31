@@ -1,10 +1,10 @@
 package WebService::KoreanSpeller;
 # ABSTRACT: Korean spellchecker
-our $VERSION = '0.009';
+our $VERSION = '0.010';
 $VERSION = eval $VERSION;
 
-use Any::Moose;
-use Any::Moose '::Util::TypeConstraints';
+use Moose;
+use Moose::Util::TypeConstraints;
 use namespace::autoclean;
 use LWP::UserAgent;
 use utf8;
@@ -53,8 +53,8 @@ __PACKAGE__->meta->make_immutable;
 
 1;
 
-
 __END__
+
 =pod
 
 =encoding utf8
@@ -65,7 +65,7 @@ WebService::KoreanSpeller - Korean spellchecker
 
 =head1 VERSION
 
-version 0.009
+version 0.010
 
 =head1 SYNOPSIS
 
@@ -101,6 +101,14 @@ version 0.009
 
 This module provides a Perl interface to the Web-based korean speller service( 온라인 한국어 맞춤법/문법 검사기 - http://speller.cs.pusan.ac.kr ).
 
+=head1 NAME
+
+WebService::KoreanSpeller - Korean spellchecker
+
+=head1 VERSION
+
+version 0.009
+
 =head1 METHODS
 
 =head2 new( text => 'text for spell check' )
@@ -121,10 +129,20 @@ C.H. Kang <chahkang@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by C.H. Kang.
+This software is copyright (c) 2012 by C.H. Kang.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=head1 AUTHOR
+
+C.H. Kang <chahkang@gmail.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2012 by C.H. Kang.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

@@ -23,13 +23,14 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "WebService::KoreanSpeller",
   "PREREQ_PM" => {
-    "Any::Moose" => 0,
     "Encode" => 0,
     "LWP::UserAgent" => 0,
+    "Moose" => 0,
+    "Moose::Util::TypeConstraints" => 0,
     "namespace::autoclean" => 0,
     "utf8" => 0
   },
-  "VERSION" => "0.009",
+  "VERSION" => "0.010",
   "test" => {
     "TESTS" => "t/*.t"
   }

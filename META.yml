@@ -8,18 +8,19 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300003, CPAN::Meta::Converter version 2.112621'
+generated_by: 'Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: WebService-KoreanSpeller
 requires:
-  Any::Moose: 0
   Encode: 0
   LWP::UserAgent: 0
+  Moose: 0
+  Moose::Util::TypeConstraints: 0
   namespace::autoclean: 0
   utf8: 0
 resources:
   repository: http://github.com/aero/WebService-KoreanSpeller
-version: 0.009
+version: 0.010
