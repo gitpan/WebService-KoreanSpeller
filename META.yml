@@ -3,24 +3,36 @@ abstract: 'Korean spellchecker'
 author:
   - 'C.H. Kang <chahkang@gmail.com>'
 build_requires:
-  Test::More: 0
-  strict: 0
+  Test::More: '0'
+  strict: '0'
 configure_requires:
-  ExtUtils::MakeMaker: 6.30
+  Module::Build::Tiny: '0.037'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Milla version v1.0.5, Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: WebService-KoreanSpeller
+no_index:
+  directory:
+    - t
+    - xt
+    - inc
+    - share
+    - eg
+    - examples
 requires:
-  Encode: 0
-  LWP::UserAgent: 0
-  Moose: 0
-  Moose::Util::TypeConstraints: 0
-  namespace::autoclean: 0
-  utf8: 0
+  Encode: '0'
+  LWP::UserAgent: '0'
+  Moose: '0'
+  Moose::Util::TypeConstraints: '0'
+  namespace::autoclean: '0'
+  utf8: '0'
 resources:
-  repository: http://github.com/aero/WebService-KoreanSpeller
-version: 0.010
+  bugtracker: https://github.com/aero/WebService-KoreanSpeller/issues
+  homepage: https://github.com/aero/WebService-KoreanSpeller
+  repository: https://github.com/aero/WebService-KoreanSpeller.git
+version: '0.011'
+x_contributors:
+  - 'aero <chahkang@gmail.com>'

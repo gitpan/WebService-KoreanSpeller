@@ -1,6 +1,6 @@
 package WebService::KoreanSpeller;
-# ABSTRACT: Korean spellchecker
-our $VERSION = '0.010';
+
+our $VERSION = '0.011';
 $VERSION = eval $VERSION;
 
 use Moose;
@@ -63,10 +63,6 @@ __END__
 
 WebService::KoreanSpeller - Korean spellchecker
 
-=head1 VERSION
-
-version 0.010
-
 =head1 SYNOPSIS
 
     use WebService::KoreanSpeller;
@@ -101,14 +97,6 @@ version 0.010
 
 This module provides a Perl interface to the Web-based korean speller service( 온라인 한국어 맞춤법/문법 검사기 - http://speller.cs.pusan.ac.kr ).
 
-=head1 NAME
-
-WebService::KoreanSpeller - Korean spellchecker
-
-=head1 VERSION
-
-version 0.009
-
 =head1 METHODS
 
 =head2 new( text => 'text for spell check' )
@@ -122,17 +110,6 @@ Returns results as array of hashes(if there is no error in the text, this method
 =head1 CAUTION
 
 I'm afraid we don't have a good open source korean spell checker. but there is a decent proprietary service that runs on the online website( 온라인 한국어 맞춤법/문법 검사기 - http://speller.cs.pusan.ac.kr ). So I made this module with web-scrapping approach, this is easy to mess up if they change layout of the website. Let me know if this does not work. *This module follows the same terms of the original service agreement.*
-
-=head1 AUTHOR
-
-C.H. Kang <chahkang@gmail.com>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2012 by C.H. Kang.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
 
 =head1 AUTHOR
 
